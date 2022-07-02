@@ -5,15 +5,14 @@ import CompletedSadLib from './CompletedSadLib'
 const WordPrompt = () => {
   const [unsubmittedAnswers, setUnsubmittedAnswers] = useState('')
   const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [submittedAnswers, setSubmittedAnswers] = useState([])
+  const [submittedAnswers, setSubmittedAnswers] = useState({})
 
   const handleSubmit = () => {
     // TODO: Check if something other than text or number?
-    let answersArray = submittedAnswers
+    let stagedAnswers = submittedAnswers
     let currentTag = Constants.QUESTIONS[currentQuestion].tag
-    let tagAndAnswer = { [currentTag]: unsubmittedAnswers.toLowerCase() }
-    answersArray.push(tagAndAnswer)
-    setSubmittedAnswers(answersArray)
+    stagedAnswers[currentTag] = unsubmittedAnswers.toLowerCase() // Looks like --> currentTag: unsubmittedanswers
+    setSubmittedAnswers(stagedAnswers)
     setUnsubmittedAnswers('')
     setCurrentQuestion(currentQuestion + 1)
   }
@@ -24,7 +23,7 @@ const WordPrompt = () => {
 
   return (
     <>
-      {submittedAnswers.length === Constants.QUESTIONS.length ? (
+      {Object.keys(submittedAnswers).length === Constants.QUESTIONS.length ? (
         <CompletedSadLib submittedAnswers={submittedAnswers} />
       ) : (
         <>

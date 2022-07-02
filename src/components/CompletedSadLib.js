@@ -8,13 +8,13 @@ const CompletedSadLib = (props) => {
     prepareSadLib()
   }, [])
 
+  // TODO: Question-- is this being run twice?
   const prepareAnswerChunks = (answerChunks) => {
     let theStorySoFar = []
     for (let i = 0; i < answerChunks.length; i++) {
       if (answerChunks[i].includes('ANSWER_')) {
         let chunkTag = answerChunks[i].split('ANSWER_')[1]
-        // TODO: Grab from props the appropriately TAGged answer
-        theStorySoFar.push(chunkTag)
+        theStorySoFar.push(` ${props.submittedAnswers[chunkTag]} `) //NOTE: This includes spaces. Think that's ok, or better place to do it?
       } else {
         theStorySoFar.push(answerChunks[i])
       }
@@ -26,7 +26,6 @@ const CompletedSadLib = (props) => {
     let answerChunks = Constants.SAD_LIB_FAVORITE_ITEM_COMPLETED.map(
       (chunk) => chunk
     )
-    console.log(`answerChunks ${answerChunks}`)
     prepareAnswerChunks(answerChunks)
   }
 
