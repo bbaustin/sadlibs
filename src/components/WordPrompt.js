@@ -8,7 +8,9 @@ const WordPrompt = () => {
   const [submittedAnswers, setSubmittedAnswers] = useState({})
 
   const handleSubmit = () => {
+    // TODO: Check if not filled in
     // TODO: Check if something other than text or number?
+    // TODO: Add an error message state/div
     let stagedAnswers = submittedAnswers
     let currentTag = Constants.QUESTIONS[currentQuestion].tag
     stagedAnswers[currentTag] = unsubmittedAnswers.toLowerCase() // Looks like --> currentTag: unsubmittedanswers
