@@ -34,9 +34,9 @@ const WordPrompt = () => {
       {Object.keys(submittedAnswers).length === Constants.QUESTIONS.length ? (
         <CompletedSadLib submittedAnswers={submittedAnswers} />
       ) : (
-        <>
+        <section className='question-holder'>
           <h1>{Constants.QUESTIONS[currentQuestion].partOfSpeech}</h1>
-          <p>{errorMessage}</p>
+          <small>{Constants.QUESTIONS[currentQuestion].explanation}</small>
           <input
             autoFocus
             onChange={handleChange}
@@ -45,7 +45,8 @@ const WordPrompt = () => {
             value={unsubmittedAnswers}
           ></input>
           <button onClick={() => checkSubmission()}>Next 👉</button>
-        </>
+          <small style={{ color: 'var(--goldish)' }}>{errorMessage}</small>
+        </section>
       )}
     </>
   )

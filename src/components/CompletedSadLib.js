@@ -35,11 +35,11 @@ const CompletedSadLib = (props) => {
   }
 
   return (
-    <>
+    <section className='completed-sad-lib'>
       {compiledAnswerChunks.map((chunk, key) => (
         <span key={key}>{chunk}</span>
       ))}
-    </>
+    </section>
   )
 }
 

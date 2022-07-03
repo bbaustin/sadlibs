@@ -3,7 +3,7 @@ export const QUESTIONS = [
     tag: 'NOUN-1',
     partOfSpeech: 'Plural Noun',
     explanation:
-      'Example: cats, Ford SUVs, hot sauce [non-countable nouns also OK]',
+      'Example: dogs, Jeep Grand Wagoneers, hot sauce [non-countable nouns also OK]',
   },
   {
     tag: 'FAMILY-MEMBER-1',
@@ -28,12 +28,12 @@ export const QUESTIONS = [
   {
     tag: 'VERB-2',
     partOfSpeech: 'Verb (transitive)',
-    explanation: 'Example: kick, punch, suplex',
+    explanation: 'Example: punt, pet, pinch',
   },
   {
     tag: 'VERB-3',
-    partOfSpeech: 'Verb (transitive)',
-    explanation: 'Example: hug, kiss, hug and kiss',
+    partOfSpeech: 'More Extreme Verb (transitive)',
+    explanation: 'Example: embrace, suplex, detonate',
   },
   {
     tag: 'FAMILY-MEMBER-2',
@@ -44,7 +44,7 @@ export const QUESTIONS = [
   {
     tag: 'PAST-TENSE-VERB',
     partOfSpeech: 'Past Tense Verb (transitive)',
-    explanation: 'Example: slurped, suplexed, hugged and kissed',
+    explanation: 'Example: slurped, punted, detonated',
   },
   {
     tag: 'TIME-UNIT',
@@ -65,7 +65,7 @@ export const QUESTIONS = [
 
 export const SAD_LIB_FAVORITE_ITEM_COMPLETED = [
   'ANSWER_NOUN-1',
-  " (laughs wistfully). No, it's nothing. It's just... My ",
+  ". No, it's nothing. It's just... My ",
   'ANSWER_FAMILY-MEMBER-1',
   '... They LOVED ',
   'ANSWER_NOUN-1',

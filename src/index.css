@@ -1,6 +1,6 @@
 :root {
   --blackish: #010101;
-  --greyish: #2c3e50;
+  --greyish: #393939;
   --goldish: #efac00;
   --whiteish: #f7f7f7;
 }
@@ -33,10 +33,16 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  padding: 10px 20px;
 }
 
 h1 {
+  color: var(--goldish);
   margin: 0;
+}
+
+h1 span.logo-text {
+  font-weight: 300;
 }
 
 .moon {
@@ -48,10 +54,62 @@ h1 {
   user-select: none; /* Standard */
 }
 
+main {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  margin: 0;
+}
+
+section.question-holder {
+  display: flex;
+  flex-direction: column;
+}
+
+section.question-holder * {
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+small {
+  font-size: 16px;
+  margin-bottom: 20px !important;
+}
+
+input {
+  background: var(--whiteish);
+  font-size: 18px;
+  height: 30px;
+  margin: 0 auto 20px auto !important;
+  padding: 5px 10px;
+  width: 300px;
+}
+
+input:focus {
+  outline-color: var(--goldish);
+}
+
+button {
+  background: var(--whiteish);
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin: 0 auto;
+  width: 150px;
+}
+
+section.completed-sad-lib {
+  line-height: 1.75;
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: left;
+}
+
 .goldish-answers {
   color: var(--goldish);
-  font-weight: 500;
-  text-decoration-thickness: from-font;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  font-weight: 900;
 }
