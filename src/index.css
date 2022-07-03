@@ -1,3 +1,14 @@
+:root {
+  --blackish: #010101;
+  --greyish: #2c3e50;
+  --goldish: #efac00;
+  --whiteish: #f7f7f7;
+}
+
+html {
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +18,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App.dark {
+  background: var(--greyish);
+  color: var(--whiteish);
+}
+
 .App {
+  background: var(--whiteish);
+  color: var(--blackish);
+  min-height: 100vh;
   white-space: pre-line;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+}
+
+.moon {
+  cursor: pointer;
+  font-size: 30px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.goldish-answers {
+  color: var(--goldish);
+  font-weight: 500;
+  text-decoration-thickness: from-font;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

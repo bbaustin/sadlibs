@@ -6,16 +6,22 @@ const WordPrompt = () => {
   const [unsubmittedAnswers, setUnsubmittedAnswers] = useState('')
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [submittedAnswers, setSubmittedAnswers] = useState({})
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const checkSubmission = () => {
+    if (!unsubmittedAnswers || !unsubmittedAnswers.trim()) {
+      setErrorMessage('Please enter something!')
+      //TODO: Consider special character matching with RegEx, etc.
+    } else handleSubmit()
+  }
 
   const handleSubmit = () => {
-    // TODO: Check if not filled in
-    // TODO: Check if something other than text or number?
-    // TODO: Add an error message state/div
     let stagedAnswers = submittedAnswers
     let currentTag = Constants.QUESTIONS[currentQuestion].tag
     stagedAnswers[currentTag] = unsubmittedAnswers.toLowerCase() // Looks like --> currentTag: unsubmittedanswers
     setSubmittedAnswers(stagedAnswers)
     setUnsubmittedAnswers('')
+    setErrorMessage('')
     setCurrentQuestion(currentQuestion + 1)
   }
 
@@ -30,6 +36,7 @@ const WordPrompt = () => {
       ) : (
         <>
           <h1>{Constants.QUESTIONS[currentQuestion].partOfSpeech}</h1>
+          <p>{errorMessage}</p>
           <input
             autoFocus
             onChange={handleChange}
@@ -37,7 +44,7 @@ const WordPrompt = () => {
             type='text'
             value={unsubmittedAnswers}
           ></input>
-          <button onClick={() => handleSubmit()}>Next 👉</button>
+          <button onClick={() => checkSubmission()}>Next 👉</button>
         </>
       )}
     </>

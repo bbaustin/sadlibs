@@ -14,7 +14,12 @@ const CompletedSadLib = (props) => {
     for (let i = 0; i < answerChunks.length; i++) {
       if (answerChunks[i].includes('ANSWER_')) {
         let chunkTag = answerChunks[i].split('ANSWER_')[1]
-        theStorySoFar.push(` ${props.submittedAnswers[chunkTag]} `) //NOTE: This includes spaces. Think that's ok, or better place to do it?
+        theStorySoFar.push()
+        theStorySoFar.push(
+          <span className='goldish-answers'>
+            {props.submittedAnswers[chunkTag]}
+          </span>
+        )
       } else {
         theStorySoFar.push(answerChunks[i])
       }
