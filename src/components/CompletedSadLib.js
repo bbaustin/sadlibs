@@ -31,6 +31,7 @@ const CompletedSadLib = (props) => {
     let answerChunks = Constants.SAD_LIB_FAVORITE_ITEM_COMPLETED.map(
       (chunk) => chunk
     )
+    console.log(answerChunks)
     prepareAnswerChunks(answerChunks)
   }
 

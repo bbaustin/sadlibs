@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import * as Constants from '../assets/Constants'
 import CompletedSadLib from './CompletedSadLib'
+import * as Constants from '../assets/Constants'
 
 const WordPrompt = () => {
   const [unsubmittedAnswers, setUnsubmittedAnswers] = useState('')
@@ -15,6 +15,16 @@ const WordPrompt = () => {
     } else handleSubmit()
   }
 
+  const handleChange = (event) => {
+    setUnsubmittedAnswers(event.target.value)
+  }
+
+  const handleEnter = (event) => {
+    if (event.key === 'Enter') {
+      checkSubmission()
+    }
+  }
+
   const handleSubmit = () => {
     let stagedAnswers = submittedAnswers
     let currentTag = Constants.QUESTIONS[currentQuestion].tag
@@ -23,10 +33,6 @@ const WordPrompt = () => {
     setUnsubmittedAnswers('')
     setErrorMessage('')
     setCurrentQuestion(currentQuestion + 1)
-  }
-
-  const handleChange = (event) => {
-    setUnsubmittedAnswers(event.target.value)
   }
 
   return (
@@ -39,7 +45,9 @@ const WordPrompt = () => {
           <small>{Constants.QUESTIONS[currentQuestion].explanation}</small>
           <input
             autoFocus
+            onBlur={({ target }) => target.focus()}
             onChange={handleChange}
+            onKeyDown={handleEnter}
             required
             type='text'
             value={unsubmittedAnswers}

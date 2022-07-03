@@ -65,6 +65,15 @@ p {
   margin: 0;
 }
 
+section.welcome p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+section.welcome button {
+  margin-top: 10px;
+}
+
 section.question-holder {
   display: flex;
   flex-direction: column;
@@ -106,6 +115,7 @@ section.completed-sad-lib {
   line-height: 1.75;
   margin: 0 auto;
   max-width: 400px;
+  padding-bottom: 60px;
   text-align: left;
 }
 
