@@ -13,7 +13,7 @@ const CompletedSadLib = (props) => {
     let theStorySoFar = []
     for (let i = 0; i < answerChunks.length; i++) {
       if (answerChunks[i].includes('ANSWER_')) {
-        let chunkTag = answerChunks[i].split('ANSWER_')[1]
+        let chunkTag = answerChunks[i].split('ANSWER_')[1] // NOTE: This grabs the Tag (whatever comes after AFTER_)
         theStorySoFar.push()
         theStorySoFar.push(
           <span className='goldish-answers'>
@@ -31,7 +31,6 @@ const CompletedSadLib = (props) => {
     let answerChunks = Constants.SAD_LIB_FAVORITE_ITEM_COMPLETED.map(
       (chunk) => chunk
     )
-    console.log(answerChunks)
     prepareAnswerChunks(answerChunks)
   }
 

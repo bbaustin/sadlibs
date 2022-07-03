@@ -123,3 +123,29 @@ section.completed-sad-lib {
   color: var(--goldish);
   font-weight: 900;
 }
+
+@media screen and (max-width: 600px) {
+  h1,
+  .moon {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+  }
+  small {
+    font-size: 14px;
+  }
+  button {
+    font-size: 16px;
+  }
+  main {
+    width: 70%;
+  }
+  .question-holder {
+    width: 100%;
+  }
+  input {
+    padding: 5px;
+    width: 90%;
+  }
+}

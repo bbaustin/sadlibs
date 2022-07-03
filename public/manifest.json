@@ -1,8 +1,8 @@
 {
   "short_name": "SadLibs",
   "name": "SadLibs",
-  "start_url": ".",
+  "start_url": "https://hereismy.website/sadlibs",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#efac00",
   "background_color": "#ffffff"
 }
